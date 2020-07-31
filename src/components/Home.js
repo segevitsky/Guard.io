@@ -37,7 +37,6 @@ const Home = (props) => {
                 'X-Best-Pokemon': 'charmander',
             }
         }).then((res) => {
-            console.log(res.data.items);
             setOffset(prevMode => prevMode + 1)
             setBreaches(res.data.items);
             setNumberOfItems(res.data.items.length)
@@ -46,13 +45,11 @@ const Home = (props) => {
     }
 
     const offsetHandlerBack = () => {
-        console.log({offset})
         axios.get(`${endP}?offset=${offset - 1}`, {
             headers: {
                 'X-Best-Pokemon': 'charmander',
             }
         }).then((res) => {
-            console.log(res.data.items);
             setOffset(prevMode => prevMode - 1)
             setBreaches(res.data.items);
         })
