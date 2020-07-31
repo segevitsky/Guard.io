@@ -25,7 +25,6 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 2em auto;
-
     @media (max-width: 350px) {
         margin: 2em;
     }
@@ -33,7 +32,8 @@ export const ButtonContainer = styled.div`
 
 
 export const Button = styled.button`
-    background: transparent;
+background: transparent;
+    border: 1px solid white;
     padding: .5em 1em;
     border: none;
     margin-right: 1em;
@@ -45,6 +45,7 @@ export const Button = styled.button`
 
     &:hover {
         transform: translateY(-3px);
+        color: indianred;
     }
     
     @media (max-width: 350px) {
@@ -66,7 +67,9 @@ export const BreachContainer = styled.div`
 	flex-direction: column;
     padding: 1.5em;
     text-align: center;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0 3px 12px -6px rgba(0, 0, 0, 0.54);
+    // box-shadow: ${props => props.mode === false ? "0 3px 12px -6px white" : "0 3px 12px -6px rgba(0, 0, 0, 0.54)"};
+    border-radius: 10px;
     cursor: pointer;
     transition: all 250ms ease-in;
 
@@ -97,6 +100,7 @@ export const FullBreachContainer = styled.div`
 
 export const Header = styled.h1`
     margin-bottom: 2em;
+    text-align: center;
 `;
 
 export const Description = styled.p`

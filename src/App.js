@@ -9,7 +9,7 @@ import FullBreach from './components/FullBreach';
 
 
 
-function App(props) {
+function App() {
   const [darkMode,setDarkMode] = useState(getInitialMode());
 
   useEffect(() => {
@@ -50,7 +50,8 @@ function App(props) {
        onChange={darkModeHandler}
     />
     <Switch>
-      <Route path='/' exact component={Home} />
+      <Route path='/' exact render={() => <Home mode={darkMode}/>} />
+      {/* <Route path='/' exact component={Home} /> */}
       <Route path='/:id?/:page?'  exact component={FullBreach} />
     </Switch>
     </div>

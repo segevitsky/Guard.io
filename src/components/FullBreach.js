@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import Spinner from '../components/Spinner/Spinner';
-import { FullBreachContainer, Image, Header, Description, Para } from '../styles/styles'
+import { FullBreachContainer, Image, Header, Description, Para, Button } from '../styles/styles'
+import { useHistory } from "react-router-dom";
 import parse from 'html-react-parser';
 import axios from 'axios';
 
@@ -8,6 +9,7 @@ import axios from 'axios';
 const FullBreach = (props) => {
     const [selectedBreach, setSelectedBreach] = useState([])
     const page = props.match.params.page
+    let history = useHistory();
 	useEffect(() => {
         let endP = `https://guard.io/v2/hiring/fe/breaches?offset=${page}`;
 		axios
@@ -28,14 +30,18 @@ const FullBreach = (props) => {
     
 
     let desc;
+    let date;
     let fullB = <Spinner />
     if (selectedBreach.length > 0) {
         fullB = selectedBreach[0]
         desc = parse(fullB.Description)
+        date = new Date(fullB.ModifiedDate).toDateString()
+        console.log(date)
     }
 
     return (
         <FullBreachContainer> 
+             <Button onClick={() => history.goBack()}>Back</Button>
             <Header> Breach Name: { fullB.Title } </Header>    
             <p> { fullB.BreachDate } </p>
             <Image src={fullB.LogoPath} alt='Logo'/>
@@ -43,7 +49,7 @@ const FullBreach = (props) => {
             <p> { fullB.PwnCount } </p>
             <Description> {desc} </Description>
             <Para> Data Classes: {fullB.DataClasses?.map(el => el + ' ')}. </Para>
-            <p> Last Update: { fullB.ModifiedDate } </p>
+            <p> Last Update: { date } </p>
         </FullBreachContainer>
     )
 }

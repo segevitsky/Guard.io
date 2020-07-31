@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, ButtonContainer, Button, Offset} from '../styles/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
+import Spinner from './Spinner/Spinner';
 import Breach from './Breach';
 import axios from 'axios';
 
@@ -10,7 +11,7 @@ const Home = (props) => {
     const [breaches, setBreaches] = useState([]);
     const [offset,setOffset] = useState(0)
     const [numberOfItems, setNumberOfItems] = useState(0)
-
+    console.log(props.mode)
     let endP = `https://guard.io/v2/hiring/fe/breaches`;
 
 	useEffect(() => {
@@ -56,15 +57,20 @@ const Home = (props) => {
         .catch(err => console.log(err))
     }
     
-	const displayedBreaches = breaches.map((el, i) => (
-        <Breach key={el.Name} 
-            name={el.Title}
-            BreachDate={el.BreachDate}
-            LogoPath={el.LogoPath}
-            breaches={breaches}
-            clicked={() => breachSelectedHandler(el.Name)}
-        />
-        ));
+    let displayedBreaches = <Spinner />
+    if (breaches) { 
+        displayedBreaches = breaches.map((el, i) => (
+            <Breach key={el.Name} 
+                name={el.Title}
+                BreachDate={el.BreachDate}
+                LogoPath={el.LogoPath}
+                breaches={breaches}
+                clicked={() => breachSelectedHandler(el.Name)}
+            />
+            ));
+    }
+
+
         
     return (
             <>
