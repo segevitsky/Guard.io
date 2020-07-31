@@ -50,8 +50,7 @@ function App() {
        onChange={darkModeHandler}
     />
     <Switch>
-      <Route path='/' exact render={() => <Home mode={darkMode}/>} />
-      {/* <Route path='/' exact component={Home} /> */}
+      <Route path='/' exact component={Home} />
       <Route path='/:id?/:page?'  exact component={FullBreach} />
     </Switch>
     </div>

@@ -68,7 +68,6 @@ export const BreachContainer = styled.div`
     padding: 1.5em;
     text-align: center;
     box-shadow: 0 3px 12px -6px rgba(0, 0, 0, 0.54);
-    // box-shadow: ${props => props.mode === false ? "0 3px 12px -6px white" : "0 3px 12px -6px rgba(0, 0, 0, 0.54)"};
     border-radius: 10px;
     cursor: pointer;
     transition: all 250ms ease-in;

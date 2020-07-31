@@ -11,7 +11,6 @@ const Home = (props) => {
     const [breaches, setBreaches] = useState([]);
     const [offset,setOffset] = useState(0)
     const [numberOfItems, setNumberOfItems] = useState(0)
-    console.log(props.mode)
     let endP = `https://guard.io/v2/hiring/fe/breaches`;
 
 	useEffect(() => {
