@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, ButtonContainer, Button, Offset} from '../styles/styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
 import Breach from './Breach';
 import axios from 'axios';
 
@@ -67,12 +69,12 @@ const Home = (props) => {
         />
         ));
         
-        return (
+    return (
             <>
             <ButtonContainer>
-                <Button disabled={ offset === 0 } onClick={offsetHandlerBack}> Previous Page </Button>
+                <Button disabled={ offset === 0 } onClick={offsetHandlerBack}> <FontAwesomeIcon icon={faBackward} /> </Button>
                 <Offset> {offset} </Offset>
-                <Button disabled={ numberOfItems === 1 } onClick={offsetHandlerForward}> Next Page </Button>
+                <Button disabled={ numberOfItems === 1 } onClick={offsetHandlerForward}> <FontAwesomeIcon icon={faForward} /> </Button>
             </ButtonContainer>
 			<Container>{displayedBreaches}</Container>
             </>

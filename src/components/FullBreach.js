@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import Spinner from '../components/Spinner/Spinner';
-import { FullBreachContainer, Image, Header } from '../styles/styles'
+import { FullBreachContainer, Image, Header, Description } from '../styles/styles'
+import parse from 'html-react-parser';
 import axios from 'axios';
 
 
@@ -28,19 +29,30 @@ const FullBreach = (props) => {
 			.catch((err) => console.log(err));
 	}, []);
 
+    
+    let link;
+    let linkTwo;
     let fullB = <Spinner />
     if (selectedBreach.length > 0) {
         fullB = selectedBreach[0]
+        link = fullB.Description.split(/(<([^>]+)>)/gi)
+        link = link[1]
+        linkTwo = parse(link)
+        console.log(link)
+        console.log(linkTwo)
     }
-    console.log(fullB)
+
     return (
         <FullBreachContainer> 
             <Header> Breach Name: { fullB.Title } </Header>    
+            <p> { fullB.BreachDate } </p>
             <Image src={fullB.LogoPath} alt='Logo'/>
             <h3> Other Details </h3>
-            <p> { fullB.BreachDate } </p>
             <p> { fullB.PwnCount } </p>
+            <Description> {fullB.Description?.replace(/(<([^>]+)>)/gi, "")} </Description>
+            <p> Data Classes: {fullB.DataClasses?.map(el => el + ' ')} </p>
             <p> Last Update: { fullB.ModifiedDate } </p>
+             { linkTwo }
         </FullBreachContainer>
     )
 }

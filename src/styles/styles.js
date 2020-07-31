@@ -4,8 +4,9 @@ import styled, { keyframes } from 'styled-components';
 //////////////////HOME STYLES ///////////////////////
 
 const appear = keyframes`
- 0% {transform: scale(0) }
- 100% { transform: scale(1); }
+ 0% { opacity: 0 }
+ 50% { opacity: 0.6 }
+ 100% { opacity: 1 }
 `
 
 export const Container = styled.div`
@@ -14,7 +15,7 @@ margin: 4em auto;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 grid-gap: 2rem;
-animation: ${appear} 550ms ease-in forwards;
+animation: ${appear} 1.2s ease-in forwards;
 `;
 
 
@@ -34,7 +35,7 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
     background: transparent;
     padding: .5em 1em;
-    border: 1px solid black;
+    border: none;
     margin-right: 1em;
     margin-left: 1em;
     cursor: pointer;
@@ -43,18 +44,16 @@ export const Button = styled.button`
     transition: all 250ms ease-in;
 
     &:hover {
-        background-color: black;
-        border: 1px solid black;
-        color: white;
+        transform: translateY(-3px);
     }
-
+    
     @media (max-width: 350px) {
         font-size: 1em;
         
     }
-`
-
-export const Offset = styled.div`
+    `
+    
+    export const Offset = styled.div`
     font-size: 1em;
     font-weight: bold;
 `
@@ -98,4 +97,10 @@ export const FullBreachContainer = styled.div`
 
 export const Header = styled.h1`
     margin-bottom: 2em;
+`;
+
+export const Description = styled.p`
+    max-width: 75%;
+    font-size: 1em;
+    font-weight:700;
 `;
