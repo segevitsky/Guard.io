@@ -104,3 +104,8 @@ export const Description = styled.p`
     font-size: 1em;
     font-weight:700;
 `;
+
+export const Para = styled.p`
+    max-width: 75%;
+    text-align: center;
+`

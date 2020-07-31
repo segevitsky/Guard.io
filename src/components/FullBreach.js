@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import Spinner from '../components/Spinner/Spinner';
-import { FullBreachContainer, Image, Header, Description } from '../styles/styles'
+import { FullBreachContainer, Image, Header, Description, Para } from '../styles/styles'
 import parse from 'html-react-parser';
 import axios from 'axios';
 
@@ -42,7 +42,7 @@ const FullBreach = (props) => {
             <h3> Other Details </h3>
             <p> { fullB.PwnCount } </p>
             <Description> {desc} </Description>
-            <p> Data Classes: {fullB.DataClasses?.map(el => el + ' ')} </p>
+            <Para> Data Classes: {fullB.DataClasses?.map(el => el + ' ')}. </Para>
             <p> Last Update: { fullB.ModifiedDate } </p>
         </FullBreachContainer>
     )
