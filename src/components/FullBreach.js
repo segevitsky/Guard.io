@@ -30,8 +30,6 @@ const FullBreach = (props) => {
     
 
     let desc,date,upperDate;
-    // let date;
-    // let upperDate;
     let fullB = <Spinner />
     if (selectedBreach.length > 0) {
         fullB = selectedBreach[0]
@@ -42,12 +40,12 @@ const FullBreach = (props) => {
 
     return (
         <FullBreachContainer> 
-             <BackButton onClick={() => history.goBack()}>Back</BackButton>
+            <BackButton onClick={() => history.goBack()}>Back</BackButton>
             <Header> Breach Name: { fullB.Title } </Header>    
             <p> { upperDate } </p>
-            <FullBreachImage src={fullB.LogoPath} alt='Logo'/>
+             <FullBreachImage src={fullB.LogoPath} alt='Logo'/>
             <h3> Other Details </h3>
-            <p> { fullB.PwnCount } </p>
+            <p> id: { fullB.PwnCount } </p>
             <Description> {desc} </Description>
             <Para> Data Classes: {fullB.DataClasses?.join(", ")}. </Para>
             <p> Last Update: { date } </p>

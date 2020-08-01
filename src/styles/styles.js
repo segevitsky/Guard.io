@@ -95,7 +95,7 @@ export const FullBreachContainer = styled.div`
 
 export const Header = styled.h1`
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     text-align: center;
     max-width: 95%;
 `;
@@ -115,6 +115,8 @@ export const Para = styled.p`
 export const BackButton = styled.button`
     border: none;
     font-weight: bold;
+    margin-top: 1em;
+    font-size: 1.5em;
     transition: all 350ms ease-in-out;
     background: transparent;
     border: 1px solid;
