@@ -93,6 +93,17 @@ export const FullBreachContainer = styled.div`
     margin-top: 2em;
 `
 
+export const FullBreachContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+    margin: 2em 0;
+    border: 1px solid indianred;
+    box-shadow: 0 3px 12px -6px indianred;
+`
+
 export const Header = styled.h1`
     margin-top: 2em;
     margin-bottom: 1em;
