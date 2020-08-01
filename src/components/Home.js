@@ -24,7 +24,9 @@ const Home = (props) => {
                 setBreaches(res.data.items);
 			})
 			.catch((err) => console.log(err));
-	}, []);
+    }, []);
+    
+
 
 	const breachSelectedHandler = (id) => {
 		props.history.push('/' + id + '/' + offset);
@@ -85,5 +87,3 @@ const Home = (props) => {
 
 export default Home;
 
-
-// error: "Invalid offset."
