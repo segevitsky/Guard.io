@@ -42,7 +42,7 @@ background: transparent;
     font-size: 2.5em;
     font-weight: 900;
     transition: all 250ms ease-in;
-    color: violet;
+    color: indianred;
     &:hover {
         transform: translateY(-3px);
     }
@@ -66,7 +66,7 @@ export const BreachContainer = styled.div`
 	flex-direction: column;
     padding: 1.5em;
     text-align: center;
-    box-shadow: 0 3px 12px -6px violet;
+    box-shadow: 0 3px 12px -6px indianred;
     border-radius: 10px;
     cursor: pointer;
     transition: all 250ms ease-in;
@@ -82,7 +82,7 @@ export const BreachContainer = styled.div`
 export const Image = styled.img`
     filter: invert(100%);
     -webkit-filter: invert(100%);
-    max-width: 50%;
+    max-width: 25%;
     padding: 1.5em;
     `;
 
