@@ -102,6 +102,7 @@ export const Header = styled.h1`
     margin-top: 2em;
     margin-bottom: 2em;
     text-align: center;
+    max-width: 95%;
 `;
 
 export const Description = styled.p`
