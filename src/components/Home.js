@@ -61,12 +61,13 @@ const Home = (props) => {
         displayedBreaches = breaches.map((el, i) => (
             <Breach key={el.Name} 
                 name={el.Title}
-                BreachDate={el.BreachDate}
+                BreachDate={new Date(el.BreachDate).toDateString()}
                 LogoPath={el.LogoPath}
                 breaches={breaches}
                 clicked={() => breachSelectedHandler(el.Name)}
             />
             ));
+            
     }
 
 

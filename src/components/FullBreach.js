@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import Spinner from '../components/Spinner/Spinner';
-import { FullBreachContainer, Image, Header, Description, Para, Button } from '../styles/styles'
+import { FullBreachContainer, Image, Header, Description, Para, BackButton } from '../styles/styles'
 import { useHistory } from "react-router-dom";
 import parse from 'html-react-parser';
 import axios from 'axios';
@@ -29,26 +29,27 @@ const FullBreach = (props) => {
 
     
 
-    let desc;
-    let date;
+    let desc,date,upperDate;
+    // let date;
+    // let upperDate;
     let fullB = <Spinner />
     if (selectedBreach.length > 0) {
         fullB = selectedBreach[0]
         desc = parse(fullB.Description)
         date = new Date(fullB.ModifiedDate).toDateString()
-        console.log(date)
+        upperDate = new Date(fullB.BreachDate).toDateString()
     }
 
     return (
         <FullBreachContainer> 
-             <Button onClick={() => history.goBack()}>Back</Button>
+             <BackButton onClick={() => history.goBack()}>Back</BackButton>
             <Header> Breach Name: { fullB.Title } </Header>    
-            <p> { fullB.BreachDate } </p>
+            <p> { upperDate } </p>
             <Image src={fullB.LogoPath} alt='Logo'/>
             <h3> Other Details </h3>
             <p> { fullB.PwnCount } </p>
             <Description> {desc} </Description>
-            <Para> Data Classes: {fullB.DataClasses?.map(el => el + ' ')}. </Para>
+            <Para> Data Classes: {fullB.DataClasses?.join(", ")}. </Para>
             <p> Last Update: { date } </p>
         </FullBreachContainer>
     )

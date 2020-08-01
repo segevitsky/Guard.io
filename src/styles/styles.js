@@ -39,13 +39,12 @@ background: transparent;
     margin-right: 1em;
     margin-left: 1em;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-weight: 900;
     transition: all 250ms ease-in;
-
+    color: violet;
     &:hover {
         transform: translateY(-3px);
-        color: indianred;
     }
     
     @media (max-width: 350px) {
@@ -67,22 +66,24 @@ export const BreachContainer = styled.div`
 	flex-direction: column;
     padding: 1.5em;
     text-align: center;
-    box-shadow: 0 3px 12px -6px rgba(0, 0, 0, 0.54);
+    box-shadow: 0 3px 12px -6px violet;
     border-radius: 10px;
     cursor: pointer;
     transition: all 250ms ease-in;
 
     &:hover {
         transform: scale(1.05);
+    box-shadow: 0 3px 12px -6px white;
+
     }
     `;
     
 
 export const Image = styled.img`
-    background-color: var(--dark);
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
     max-width: 50%;
     padding: 1.5em;
-    border-radius: .3em;
     `;
 
 
@@ -98,6 +99,7 @@ export const FullBreachContainer = styled.div`
 `
 
 export const Header = styled.h1`
+    margin-top: 2em;
     margin-bottom: 2em;
     text-align: center;
 `;
@@ -111,4 +113,24 @@ export const Description = styled.p`
 export const Para = styled.p`
     max-width: 75%;
     text-align: center;
-`
+`;
+
+
+export const BackButton = styled.button`
+    border: none;
+    font-weight: bold;
+    transition: all 350ms ease-in-out;
+    background: transparent;
+    border: 1px solid;
+    padding: .3em;
+    cursor: pointer;
+    color: white;
+    background-color: indianred;
+
+
+    &:hover {
+        // transform: translateY(-2px);
+        background: white;
+        color: indianred;
+    }
+`;

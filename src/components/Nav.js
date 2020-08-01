@@ -4,7 +4,7 @@ const Nav = (props) => {
     return (
         <nav> 
         <div className='toggle-container'>
-        <span  role='img' aria-label='sun'> 🌞 </span>
+        <span role='img' aria-label='sun'> 🌞 </span>
         <span className='toggle'>
             <input 
               checked={props.checked}
@@ -15,7 +15,7 @@ const Nav = (props) => {
               />
             <label htmlFor='checkbox' />
         </span> 
-         <span role='img' aria-label='moon'> 🌑 </span>
+         <span role='img' aria-label='moon'> 🌛 </span>
         </div>
     </nav>
     )
