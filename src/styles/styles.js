@@ -52,11 +52,6 @@ background: transparent;
         
     }
     `
-    
-    export const Offset = styled.div`
-    font-size: 1em;
-    font-weight: bold;
-`
 
 ///BREACH
 export const BreachContainer = styled.div`

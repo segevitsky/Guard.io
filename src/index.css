@@ -17,7 +17,15 @@ body {
 a {
   color: indianred;
 }
-  .light-mode {
+
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+  color: grey;
+}
+
+.light-mode {
     background-color: #fff;
     color: #333;
     height: 100vh;
