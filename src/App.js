@@ -33,11 +33,11 @@ function App() {
     return window.matchMedia("(prefers-color-scheme: black)").matches;
   }
   
-
+  let mode = darkMode ? 'light' : 'dark';
   //Toggle Handler
   const darkModeHandler = () => {
     setDarkMode(prevMode => !prevMode)
-    toast.info('Switched mode', {
+    toast.info(`Switched to ${mode} mode`, {
       position: toast.POSITION.BOTTOM_LEFT,
   });
   }
