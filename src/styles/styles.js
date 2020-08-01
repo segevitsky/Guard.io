@@ -82,7 +82,7 @@ export const BreachContainer = styled.div`
 export const Image = styled.img`
     filter: invert(100%);
     -webkit-filter: invert(100%);
-    max-width: 25%;
+    max-width: 35%;
     padding: 1.5em;
     `;
 
@@ -134,4 +134,10 @@ export const BackButton = styled.button`
         background: white;
         color: indianred;
     }
+`;
+
+export const FullBreachImage = styled.img`
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    max-width: 10%;
 `;

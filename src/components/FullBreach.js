@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import Spinner from '../components/Spinner/Spinner';
-import { FullBreachContainer, Image, Header, Description, Para, BackButton } from '../styles/styles'
+import { FullBreachContainer, Header, Description, Para, BackButton, FullBreachImage } from '../styles/styles'
 import { useHistory } from "react-router-dom";
 import parse from 'html-react-parser';
 import axios from 'axios';
@@ -45,7 +45,7 @@ const FullBreach = (props) => {
              <BackButton onClick={() => history.goBack()}>Back</BackButton>
             <Header> Breach Name: { fullB.Title } </Header>    
             <p> { upperDate } </p>
-            <Image src={fullB.LogoPath} alt='Logo'/>
+            <FullBreachImage src={fullB.LogoPath} alt='Logo'/>
             <h3> Other Details </h3>
             <p> { fullB.PwnCount } </p>
             <Description> {desc} </Description>
